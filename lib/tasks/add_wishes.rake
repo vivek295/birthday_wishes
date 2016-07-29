@@ -34,7 +34,7 @@ namespace :wishes do
       end
 
       print "Trying To Post"
-      while form = bday_page.form_with(:method => 'POST')
+      while form = bday_page.form_with(:method => 'POST') do
         form.message = user.wish.wish
         agent.submit(form)
       end
