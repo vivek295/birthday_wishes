@@ -18,8 +18,7 @@ development:
   database: wish_friend
 
 production:
-  <<: *default
-  host: localhost
+  adapter: postgresql
   database: wish_friend
 
 # Warning: The database defined as "test" will be erased and
