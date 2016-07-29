@@ -33,8 +33,10 @@ class WishesController < ApplicationController
   def fetch_wish
     if !current_user.wish
       @wish = current_user.build_wish
+      @wish.date = Date.today
     else
       @wish = current_user.wish
+      @wish.date = Date.today
     end
     respond_to do |format|
       format.js
