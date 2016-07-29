@@ -6,7 +6,7 @@ class WishesController < ApplicationController
   end
 
   def create
-    wish = current_user.wish.new(:wish => params[:wish][:wish], date: Date.strptime(params[:date], "%m/%d/%Y"))
+    wish = current_user.build_wish(:wish => params[:wish][:wish], date: Date.strptime(params[:date], "%m/%d/%Y"))
     respond_to do |format|
       if wish.save
         return redirect_to root_path, notice: "Wish saved sucessfully!"
