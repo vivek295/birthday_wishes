@@ -1,0 +1,13 @@
+<%= form_for(@goal, mehod: 'post', remote: true, path: :save) do  |f| %>
+
+  <div class="row">
+    <div class="input-field col s4 offset-s3">
+      <%= f.text_field :wish, class: "validate" %>
+      <label class="active">Wish</label>
+    </div>
+    <%= hidden_field_tag("date", @wish.date.strftime("%m/%d/%Y")) %>
+    <div class="input-field col s4 offset-s3">
+      <%= f.submit :save, class: "waves-effect waves-light btn" %>
+    </div>
+  </div>
+<% end %>

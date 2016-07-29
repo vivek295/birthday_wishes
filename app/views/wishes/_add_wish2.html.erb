@@ -1,0 +1,14 @@
+<%= form_tag('wishes/save', mehod: 'post', remote: true) do %>
+  <%if @goal.errors.any? %>
+    <h2>Errors:</h2>
+  <% end %>
+  <div class="row">
+    <div class="input-field col s4 offset-s3">
+      <%= text_field_tag :wishes, @wish.wish, class: "validate" %>
+      <label class="active">Wish</label>
+    </div>
+    <div class="input-field col s4 offset-s3">
+      <%= submit_tag :save, class: "waves-effect waves-light btn" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AddMyGoals</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body style="margin-left:1%; margin-right:1%">
+    <nav style="margin-bottom:5%">
+      <div class="nav-wrapper" style="margin-left:1%">
+        <a href="#" class="brand-logo">Add My Goals</a>
+        <% if user_signed_in? %>
+          <ul>
+            <li style="float:right; margin-right: 5%">
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+<%= yield %>
+
+</body>
+</html>
