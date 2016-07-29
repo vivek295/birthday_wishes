@@ -1,5 +1,5 @@
 <%= form_tag('wishes/save', mehod: 'post', remote: true) do %>
-  <%if @goal.errors.any? %>
+  <%if @wish.errors.any? %>
     <h2>Errors:</h2>
   <% end %>
   <div class="row">
