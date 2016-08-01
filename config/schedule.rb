@@ -1,5 +1,5 @@
 set :output, "#{path}/log/cron.log"
 
-every :day, :at => '11:58am' do
+every :day, :at => '1:09pm' do
   rake "wishes:add"
 end

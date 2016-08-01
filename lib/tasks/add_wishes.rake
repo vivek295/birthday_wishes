@@ -37,6 +37,8 @@ namespace :wishes do
       while form = bday_page.form_with(:method => 'POST') do
         form.message = user.wish.wish
         agent.submit(form)
+        bday_page = agent.get('http://mbasic.facebook.com/browse/birthdays/?rdr')
+        p 'Wished'
       end
     end
 
